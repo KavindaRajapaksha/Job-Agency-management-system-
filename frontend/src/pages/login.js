@@ -32,30 +32,53 @@ const Login = () => {
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  //email  and  password statesa
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+ 
+
+
+
+  //submit
+  const submitHandler =  (e) => {
+    
+
+    e.preventDefault();
+     //send data to backend
+  const url = "http://localhost:8070/login";
+  const data = { email, password };
+  axios.post(url, data).then((res) => {
+    console.log(res);
+    if (res.data.status === 200) {
+      navigate("/service");
+    } else {
+      alert(res.data.message);
+    }
+  });
+  };
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <label htmlFor="username">Email</label>
       <input
         type="email"
         placeholder="someone@gmail.com"
         name="email"
-        onChange={handleChange}
-        value={data.email}
+        onChange={(e) => setEmail(e.target.value)}
         required
       />
 
       <label htmlFor="password">Password</label>
       <input
         type="password"
+        onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
         name="password"
-        onChange={handleChange}
-        value={data.password}
+      
         required
       />
 
-      <button type="submit" onClick={()=>{navigate("/service")}}>
+      <button>
         Login
       </button>
     </form>

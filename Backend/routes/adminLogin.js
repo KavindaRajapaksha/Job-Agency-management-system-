@@ -3,7 +3,7 @@ let Admin = require("../models/Admin");
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
 
     const user = await Admin.findOne({ email: req.body.email });
     console.log("user", user);

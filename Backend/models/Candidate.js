@@ -44,7 +44,7 @@ const candidateSchema= new Schema({
         required: true, 
     },
 
-    educationQualificatios:{
+    educationQualifications:{
         type: String,
         required: false, 
     },

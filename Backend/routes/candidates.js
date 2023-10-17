@@ -12,7 +12,7 @@ router.route("/add").post(async(req, res) => {
     const gender = req.body.gender;
     const emailAddress=req.body.emailAddress;
     const jobField=req.body.jobField;
-    const educationQualificatios=req.body.educationQualificatios;
+    const educationQualifications=req.body.educationQualifications;
     const jobExperiences=req.body.jobExperiences;
 
     
@@ -27,7 +27,7 @@ router.route("/add").post(async(req, res) => {
         gender, //object that use to save data
         emailAddress,
         jobField,
-        educationQualificatios,
+        educationQualifications,
         jobExperiences
     });
   
@@ -60,7 +60,7 @@ router.route("/add").post(async(req, res) => {
   router.route("/update/:id").put(async (req, res) => {
     
     let userId = req.params.id; 
-    const { firstName,lastName,nicNumber,age,contactNumber,gender,emailAddress,jobField,educationQualificatios,jobExperiences} = req.body; //d structure
+    const { firstName,lastName,nicNumber,age,contactNumber,gender,emailAddress,jobField,educationQualifications,jobExperiences} = req.body; //d structure
   
     const updateCandidate = {
         firstName,
@@ -71,7 +71,7 @@ router.route("/add").post(async(req, res) => {
         gender, 
         emailAddress,
         jobField,
-        educationQualificatios,
+        educationQualifications,
         jobExperiences
     };
     const update = await Candidate.findByIdAndUpdate(userId, updateCandidate)
