@@ -1,0 +1,9 @@
+.navbar-nav{
+  margin-left: 1000px;
+  cursor: pointer;
+
+}
+.navbar-brand{
+    margin-left: 30px;
+    font-weight: bolder;
+}

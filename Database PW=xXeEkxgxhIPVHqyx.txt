@@ -1,0 +1,28 @@
+Database PW=xXeEkxgxhIPVHqyx
+db URL=mongodb+srv://rdkskavinda:xXeEkxgxhIPVHqyx@cluster0.trhk4nj.mongodb.net/jobAgency_db
+{
+    "firstName":"Kavinda",
+    "lastName":"Rajapaksha",
+    "nicNumber":"0099990",
+    "age":"23",
+    "contactNumber":"0575",
+    "gender":"ma",
+    "emailAddress":"cvyyu",
+    "jobField":"dgv",
+    "educationQualificatios":"tyftftf",
+    "jobExperiences":"uyfuyf"
+
+}
+https://localhost:8070/candidate/add
+
+
+
+admin
+{
+   "firstName":"Kavinda",
+   "lastName":"Sandaruwan",
+   "email":"rdks.kavinda@gmail.com",
+   "address":"10/B,Isuruplace,Elwala,Ukuwela,Matale",
+   "password":"kavinda123"
+
+}

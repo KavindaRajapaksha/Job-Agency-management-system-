@@ -1,0 +1,62 @@
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color:transparent;
+    color: #fff;
+    padding: 0px;
+    margin-right: -14px;
+    margin-left: -12px;
+  }
+  
+  
+  .contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-image: url('../assets/contcatpic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  .contactContent {
+    background: rgba(255, 255, 255, 0.221);
+    padding: 60px;
+    width: 500px;
+    height: 600px;
+    border-radius: 40px;
+    margin-right: 20px;
+   margin-left: 120px;
+    position: relative;
+    text-align: left;
+  }
+  
+  .para {
+    width: 30%; 
+    margin-right: auto;
+    margin-left: auto; 
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter; 
+    color: rgb(24, 91, 18);
+  }
+  
+  h5{
+    color: rgb(18, 18, 75);
+    font-weight: lighter;
+  }
+.ad{
+    color: rgb(18, 18, 75);
+    font-weight: lighter;
+}
+.greeting{
+    color: aliceblue;
+    font-weight: bolder;
+    margin-top: 4cm;
+}

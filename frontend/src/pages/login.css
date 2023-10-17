@@ -1,0 +1,63 @@
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('../assets/wallpaperflare.com_wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .login-register-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-register-card h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .login-register-card form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-register-card label {
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  .login-register-card input {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-register-card button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-register-card p {
+    text-align: center;
+    color: #555;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .login-register-card p:hover {
+    text-decoration: underline;
+  }
+  

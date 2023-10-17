@@ -1,0 +1,85 @@
+.service{
+    background-color: rgb(178, 178, 178);
+    height: 100vh;
+}
+.header{
+    width: 100%;
+    background-color: rgb(8, 99, 235);
+    height: 60px;
+}
+.logo{
+    color: azure;
+    text-align: left;
+    margin-left: 40px;
+   
+}
+.logo:hover{
+    cursor: pointer;
+    
+}
+
+.tt1{
+    font-weight: bolder;
+    margin-bottom: 0cm;
+}
+.tt2{
+    font-weight: lighter;
+}
+.serviceContent{
+    
+    width: 60%; 
+    margin: 0 auto;
+}
+.table{
+    margin-top: 30px;
+}
+.candidates{
+    text-align: left;
+    font-weight: bold;
+    color: rgb(51, 53, 55);
+    margin-top: 100px;
+}
+
+
+.update, .view, .delete {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    margin: 5px;
+    width: 100px; 
+  }
+  .update, .view, .delete:hover{
+    cursor: pointer;
+  }
+  
+  .update {
+    background-color: rgb(116, 125, 35);
+    color: #fff;
+  }
+  
+  .view {
+    background-color: rgb(56, 163, 56);
+    color: #fff;
+  }
+  
+  .delete {
+    background-color: rgb(186, 51, 51);
+    color: #fff;
+  }
+  .add-candidate-button {
+    position: fixed; 
+  
+   margin: 0 auto;  
+  }
+  
+  .add-candidate {
+    background-color: rgb(8, 99, 235);
+    color: #fff; 
+    border-radius: 50px; 
+    width: 400px; 
+    padding: 10px; 
+    cursor: pointer;
+    border: none;
+  }
+  
+  

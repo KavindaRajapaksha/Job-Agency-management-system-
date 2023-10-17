@@ -1,0 +1,60 @@
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+    background-color:transparent;
+    color: #fff;
+    padding: 0px;
+    margin-right: -14px;
+    margin-left: -12px;
+  }
+  
+  
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-image: url('../assets/wp7366012-civil-engineer-wallpapers.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+      
+  
+  }
+.title{
+    font-size: 600%;
+    font-weight:bolder;
+    color:#955d48c3;
+    text-align: left;
+    margin-left: 80px;
+    margin-bottom: 0cm;
+}
+.t1{
+    text-align: left;
+    margin-left: 80px;
+    color:#9c8114c3 ;
+    margin-top: 0%;
+}
+  
+.para1{
+    font-size: 200%;
+    font-style: italic;
+    font-weight: lighter;
+    color: #EEE3CB;
+}
+  .content {
+    background: rgba(63, 63, 63, 0.853);
+    padding: 10px;
+    border-radius: 30px;
+    margin-left: 100px;
+    margin-right: 580px;
+    margin-top: 200px;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  
