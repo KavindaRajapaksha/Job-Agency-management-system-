@@ -1,9 +1,36 @@
 import React from 'react';
 import './services.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Services=()=>{
-   const navigate = useNavigate();
+    const navigate = useNavigate();
+    const [candidates,setCandidates]=useState([]);
+
+    useEffect(()=>{
+        axios.get(`http://localhost:8070/candidate/`).then((res)=>{
+            setCandidates(res.data);
+        }).catch((err)=>{
+            alert(err.message);
+        })
+    }
+    ,[])
+ //delete
+  
+    const deleteCandidate=(id)=>{
+        axios.delete(`http://localhost:8070/candidate/delete/${id}`).then((res)=>{
+            alert("Candidate deleted successfully");
+            window.location.reload();
+        }).catch((err)=>{
+            alert(err.message);
+        })
+    }
+
+   
+
+
+
 return(
    <div className='service'>
     <section className='header'>
@@ -27,32 +54,23 @@ return(
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">Sandun</th>
-      <td>45</td>
-      <td>Engineering</td>
-      <td>
-         <button className='update' >Update</button>
-         <button className='view'>View</button>
-         <button className='delete'>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Kavinda</th>
-      <td>24</td>
-      <td>Medicine</td>
-      <td>         <button className='update' >Update</button>
-         <button className='view'>View</button>
-         <button className='delete'>Delete</button></td>
-    </tr>
-    <tr>
-      <th scope="row">Duminda</th>
-      <td>33</td>
-      <td>teaching</td>
-      <td>         <button className='update' >Update</button>
-         <button className='view'>View</button>
-         <button className='delete'>Delete</button></td>
-    </tr>
+
+  {candidates.map((candidate)=>{
+      return(
+        <tr>
+        <th scope="row">{candidate.firstName}</th>
+        <td>{candidate.age}</td>
+        <td>{candidate.jobField}</td>
+        <td>
+           <button className='update' onClick={()=>{navigate(`/service/update/${candidate._id}`)}}>Update</button>
+           <button className='view' onClick={()=>{navigate(`/service/view/${candidate._id}`)}}>View</button>
+           <button className='delete' onClick={()=>deleteCandidate(candidate._id)}>Delete</button>
+        </td>
+      </tr>
+      )
+  })}
+  
+    
   </tbody>
 </table>
   <div className='add-candidate-button'>

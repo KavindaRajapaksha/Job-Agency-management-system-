@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./addCandidates.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const AddCandidates = () => {
   const navigate = useNavigate();
@@ -14,8 +14,32 @@ const AddCandidates = () => {
   const [gender, setGender] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [jobField, setJobField] = useState("");
-  const [educationQualification, setEducationQualification] = useState("");
+  const [educationQualifications, setEducationQualification] = useState("");
   const [jobExperiences, setJobExperiences] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    //store the data in the database
+    try {
+      await axios.post("http://localhost:8070/candidate/add", {
+        firstName,
+        lastName,
+        nicNumber,
+        age,
+        contactNumber,
+        gender,
+        emailAddress,
+        jobField,
+        educationQualifications,
+        jobExperiences,
+      });
+      alert("Candidate Added Successfully");
+      navigate("/service");
+    } catch (error) {
+      alert(error.message);
+    }
+    //navigate to the home page
+  };
 
   return (
     <div className="adding">
@@ -31,108 +55,132 @@ const AddCandidates = () => {
         </div>
       </section>
       <section className="addingContent">
-        <form>
-          <div class="form-row">
-            <br />
-            <br />
-
+        <form onSubmit={handleSubmit}>
+          <div className="form-row">
             <h2 className="newCand">New Candidate</h2>
 
-            <div class="col">
+            <div className="col">
               <input
                 type="text"
-                class="form-control"
+                className="form-control gapper"
                 name="firstName"
                 placeholder="First name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
                 type="text"
-                class="form-control"
+                className="form-control gapper"
                 name="lastName"
                 placeholder="Last name"
+                value={lastName}
+                required
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
                 type="text"
-                class="form-control"
+                className="form-control gapper"
                 name="nicNumber"
                 placeholder="Nic Number"
+                value={nicNumber}
+                onChange={(e) => setNicNumber(e.target.value)}
+                required
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
-                type="text"
-                class="form-control"
+                type="number"
+                className="form-control gapper"
                 name="age"
                 placeholder="Age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                required
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
-                type="text"
-                class="form-control"
+                type="number"
+                className="form-control gapper"
                 name="contactNumber"
                 placeholder="Telephone Number"
+                value={contactNumber}
+                onChange={(e) => setContactNumber(e.target.value)}
+                required
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
                 type="text"
-                class="form-control"
+                className="form-control gapper"
                 name="gender"
                 placeholder="Gender"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                required
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
                 type="text"
-                class="form-control"
+                className="form-control gapper"
                 name="emailAddress"
                 placeholder="Email"
+                value={emailAddress}
+                onChange={(e) => setEmailAddress(e.target.value)}
+                required
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
                 type="text"
-                class="form-control"
+                className="form-control gapper"
                 name="jobField"
                 placeholder="Job Field"
+                value={jobField}
+                onChange={(e) => setJobField(e.target.value)}
+                required
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
                 type="text"
-                class="form-control"
+                className="form-control gapper gapperbig"
                 name="educationQualification"
-                placeholder="Education  Qualification"
+                placeholder="Education Qualification"
+                value={educationQualifications}
+                onChange={(e) => setEducationQualification(e.target.value)}
+                required
               />
             </div>
-            <br />
-            <div class="col">
+
+            <div className="col">
               <input
                 type="text"
-                class="form-control"
+                className="form-control gapper gapperbig"
                 name="jobExperiences"
                 placeholder="Job Experiences"
+                value={jobExperiences}
+                onChange={(e) => setJobExperiences(e.target.value)}
+                required
               />
             </div>
-
-            <br />
           </div>
+          <button className="AddUser">Add Candidate</button>
         </form>
-
-        <button className="AddUser">Add Candidate</button>
       </section>
     </div>
   );

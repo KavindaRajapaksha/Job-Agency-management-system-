@@ -1,0 +1,27 @@
+.box{
+    width: 100%;
+    height: 100vh;
+    background-color: #d9ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.headder{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.container{
+    background: #fff;
+    padding: 10px;
+    border-radius: 100px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 60%;    
+}
