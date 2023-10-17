@@ -209,7 +209,7 @@ function UpdateCandidate() {
               />
             </div>
           </div>
-          <button className="AddUser">Add Candidate</button>
+          <button className="AddUser">Update Candidate</button>
         </form>
       </section>
     </div>
