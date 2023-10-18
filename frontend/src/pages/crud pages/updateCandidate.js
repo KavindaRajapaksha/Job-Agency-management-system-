@@ -1,73 +1,68 @@
 import React, { useEffect, useState } from "react";
 import "./addCandidates.css";
-import { useNavigate , useParams  } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-
 function UpdateCandidate() {
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [nicNumber, setNicNumber] = useState("");
-    const [age, setAge] = useState("");
-    const [contactNumber, setContactNumber] = useState("");
-    const [gender, setGender] = useState("");
-    const [emailAddress, setEmailAddress] = useState("");
-    const [jobField, setJobField] = useState("");
-    const [educationQualifications, setEducationQualification] = useState("");
-    const [jobExperiences, setJobExperiences] = useState("");
-    
-    
-    const { id } = useParams();
+  const [lastName, setLastName] = useState("");
+  const [nicNumber, setNicNumber] = useState("");
+  const [age, setAge] = useState("");
+  const [contactNumber, setContactNumber] = useState("");
+  const [gender, setGender] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [jobField, setJobField] = useState("");
+  const [educationQualifications, setEducationQualification] = useState("");
+  const [jobExperiences, setJobExperiences] = useState("");
 
-    console.log(id);
-    useEffect(() => {
-      axios.get(`http://localhost:8070/candidate/get/${id}`)
-        .then((response) => {
-          const userData = response.data;
-          setFirstName(userData.firstName);
-          setLastName(userData.lastName);
-          setNicNumber(userData.nicNumber);
-          setAge(userData.age);
-          setContactNumber(userData.contactNumber);
-          setGender(userData.gender);
-          setEmailAddress(userData.emailAddress);
-          setJobField(userData.jobField);
-          setEducationQualification(userData.educationQualifications);
-          setJobExperiences(userData.jobExperiences);
-        })
-        .catch((error) => {
-          console.error("Error fetching user data:", error);
-        });
-    }, [id]);
-  
-    const handleSubmit =async (e) => {
-      e.preventDefault();
-      //update the database
-      try {
-        await axios.put(`http://localhost:8070/candidate/update/${id}`, {
-          firstName,
-          lastName,
-          nicNumber,
-          age,
-          contactNumber,
-          gender,
-          emailAddress,
-          jobField,
-          educationQualifications,
-          jobExperiences,
-        });
-        alert("Candidate updated Successfully");
-        navigate("/service");
-      } catch (error) {
-        alert(error.message);
-      }
+  const { id } = useParams();
 
+  console.log(id);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8070/candidate/get/${id}`)
+      .then((response) => {
+        const userData = response.data;
+        setFirstName(userData.firstName);
+        setLastName(userData.lastName);
+        setNicNumber(userData.nicNumber);
+        setAge(userData.age);
+        setContactNumber(userData.contactNumber);
+        setGender(userData.gender);
+        setEmailAddress(userData.emailAddress);
+        setJobField(userData.jobField);
+        setEducationQualification(userData.educationQualifications);
+        setJobExperiences(userData.jobExperiences);
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+      });
+  }, [id]);
 
-    };
-    
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    //update the database
+    try {
+      await axios.put(`http://localhost:8070/candidate/update/${id}`, {
+        firstName,
+        lastName,
+        nicNumber,
+        age,
+        contactNumber,
+        gender,
+        emailAddress,
+        jobField,
+        educationQualifications,
+        jobExperiences,
+      });
+      alert("Candidate updated Successfully");
+      navigate("/service");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
 
   return (
     <div className="adding">
