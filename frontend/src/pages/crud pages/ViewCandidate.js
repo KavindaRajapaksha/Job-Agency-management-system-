@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import "./viewstyles.css";
+import "./viewstyles.css"; 
 
 function ViewCandidate() {
   const [candidate, setCandidate] = useState(null);
@@ -21,8 +21,9 @@ function ViewCandidate() {
   }, [id]);
 
   return (
-    <div className="candidate-details">
 
+    <div className="candidate-details">
+    
     
       {candidate ? (
         <div className="box">
