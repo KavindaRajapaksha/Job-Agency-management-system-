@@ -1,12 +1,12 @@
 import React from 'react';
 import "./navbar.css";
-import { useNavigate } from 'react-router-dom';
+
 
 
 
 
 const NavBar = () => {
-  const navigate = useNavigate();
+  
 
   return (
     
@@ -20,16 +20,16 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item active">
-                <a className="nav-link" onClick={()=>{navigate("/")}}>Home<span className="sr-only"></span></a>
+                <a className="nav-link" href="/">Home<span className="sr-only"></span></a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={()=>{navigate("/about")}}>About</a>
+                <a className="nav-link" href="/about">About</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={()=>{navigate("/login")}}>Services</a>
+                <a className="nav-link" href="/login">Services</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={()=>{navigate("/contact")}}>Contact</a>
+                <a className="nav-link" href="/contact">Contact</a>
               </li>
             </ul>
           </div>

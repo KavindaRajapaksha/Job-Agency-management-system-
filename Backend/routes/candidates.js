@@ -2,7 +2,7 @@ const express = require("express");
 let Candidate = require("../models/Candidate");
 
 const router = express.Router(); 
-//------------------------------------------------------------------------------------------------------------------------------------------
+
 router.route("/add").post(async(req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -40,7 +40,7 @@ router.route("/add").post(async(req, res) => {
         console.log(err);
       });
   });
-  //--------------------------------------------------------------------------------------------------------------------------
+ 
 
   router.route("/").get(async(req, res) => {
 
@@ -54,7 +54,9 @@ router.route("/add").post(async(req, res) => {
       });
   });
   
-  //------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+
 
 
   router.route("/update/:id").put(async (req, res) => {
@@ -76,7 +78,7 @@ router.route("/add").post(async(req, res) => {
     };
     const update = await Candidate.findByIdAndUpdate(userId, updateCandidate)
       .then(() => {
-        res.status(200).send({ status: "User updated"}); //error msg ekak font end ekata yawanawa
+        res.status(200).send({ status: "User updated"}); 
       })
       .catch((err) => {
         console.log(err);
